@@ -367,7 +367,7 @@
         // Only prevent mouse clicks. This allows vertical scrolling on mobile.
         // Do this before the sanity checks... you don't want the user to
         // accidentally drag the <img>.
-        if (e.type === 'mousedown' && !$(e.target).is('embed') && $(e.target).is('object')) {
+        if (e.type === 'mousedown' && !$(e.target).is('embed') && !$(e.target).is('object')) {
           e.preventDefault();
         }
 
@@ -465,7 +465,7 @@
         // Switch to that slide.
         c.goTo(index);
 
-        if (!$(e.target).is('embed') && $(e.target).is('object')) {
+        if (!$(e.target).is('embed') && !$(e.target).is('object')) {
         e.preventDefault();
         }
         // Restart the slideshow if it was already started before.
